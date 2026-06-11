@@ -2,15 +2,9 @@
 
 This repository is for the hackathon project Toptama / Birge.
 
-The full product is a mobile-first group-buying marketplace built with:
+The full product is a mobile-first group-buying marketplace.
 
-* Next.js App Router
-* TypeScript
-* Tailwind
-* Supabase Auth/Postgres/Realtime
-* Vercel
-
-However, your current responsibility is ONLY the ML/data/API layer.
+Your current responsibility is ONLY the ML/data/API layer implemented in Python with FastAPI.
 
 Do NOT build the full marketplace UI.
 Do NOT implement onboarding screens.
@@ -113,41 +107,41 @@ The live demo must not depend on paid or unstable AI API calls.
 
 Required endpoints:
 
-GET /api/recommendations?userId=<uuid>
+GET /recommendations?user_id=<uuid>
 
 Returns ranked recommendations:
 
-* dealId
-* productId
+* deal_id
+* product_id
 * score
 * components
 * why
 * product summary
 * deal summary
 
-POST /api/events
+POST /events
 
 Accepts:
 
-* userId
-* eventType
-* productId
-* dealId
+* user_id
+* event_type
+* product_id
+* deal_id
 * category
 * metadata
 
 Inserts event and updates user interest weights.
 
 Optional:
-GET /api/model-info
-GET /api/trust-score?userId=<uuid>
+GET /model-info
+GET /trust-score?user_id=<uuid>
 
 ## Code Rules
 
-* Use TypeScript.
+* Use Python with FastAPI.
 * Keep ML logic separate from API route logic.
-* Put pure ML functions in src/lib/ml.
-* Keep Supabase access in src/lib/supabase.
+* Put pure ML functions in src/model/.
+* Keep Supabase access in src/db/.
 * Do not hardcode secrets.
 * Use .env.example for required environment variables.
 * Do not invent fake production metrics.
@@ -160,26 +154,37 @@ GET /api/trust-score?userId=<uuid>
 
 Aim for this structure:
 
-src/lib/ml/types.ts
-src/lib/ml/scoring.ts
-src/lib/ml/explain.ts
-src/lib/ml/embeddings.ts
-src/lib/ml/adaptation.ts
-src/lib/ml/trust.ts
+src/__init__.py
+src/main.py
+src/config.py
 
-src/lib/supabase/server.ts
+src/api/__init__.py
+src/api/routes.py
+src/api/schemas.py
 
-src/app/api/recommendations/route.ts
-src/app/api/events/route.ts
-src/app/api/model-info/route.ts
+src/model/__init__.py
+src/model/types.py
+src/model/scoring.py
+src/model/explain.py
+src/model/embeddings.py
+src/model/adaptation.py
+src/model/trust.py
+
+src/db/__init__.py
+src/db/supabase_client.py
+
+src/utils/__init__.py
+src/utils/errors.py
 
 supabase/migrations/001_ml_schema.sql
 
-scripts/seed.ts
+scripts/seed.py
 
-tests/ml/scoring.test.ts
-tests/ml/explain.test.ts
-tests/ml/adaptation.test.ts
+tests/test_api.py
+tests/model/test_scoring.py
+tests/model/test_explain.py
+tests/model/test_adaptation.py
+tests/model/test_trust.py
 
 ## Done Means
 
