@@ -96,27 +96,28 @@ def get_demo_data() -> Dict[str, Any]:
     
     Returns demo users, products, deals, and events.
     All data is clearly labeled as synthetic.
+    All IDs are valid UUID strings compatible with Supabase schema.
     """
-    # Demo users with different profiles
+    # Demo users with different profiles (valid UUIDs)
     users = {
-        "user-001": {
-            "id": "user-001",
+        "00000000-0000-0000-0000-000000000001": {
+            "id": "00000000-0000-0000-0000-000000000001",
             "budget_tier": "mid",
             "city": "Алматы",
             "interests": ["electronics", "home"],
             "interest_weights": {"electronics": 0.6, "home": 0.4},
             "created_at": "2024-01-15T10:00:00Z"
         },
-        "user-002": {
-            "id": "user-002",
+        "00000000-0000-0000-0000-000000000002": {
+            "id": "00000000-0000-0000-0000-000000000002",
             "budget_tier": "low",
             "city": "Астана",
             "interests": ["fashion", "beauty"],
             "interest_weights": {"fashion": 0.7, "beauty": 0.5},
             "created_at": "2024-02-20T14:30:00Z"
         },
-        "user-003": {
-            "id": "user-003",
+        "00000000-0000-0000-0000-000000000003": {
+            "id": "00000000-0000-0000-0000-000000000003",
             "budget_tier": "high",
             "city": "Алматы",
             "interests": ["electronics", "sports", "auto"],
@@ -125,34 +126,34 @@ def get_demo_data() -> Dict[str, Any]:
         }
     }
     
-    # Demo products (25 items)
+    # Demo products (25 items) with valid UUIDs
     products = {}
     product_data = [
-        ("prod-001", "electronics", "Беспроводные наушники Sony", "Sony сымсыз құлаққаптары", ["smartphone", "audio"], 25200, 17900),
-        ("prod-002", "electronics", "Смартфон Xiaomi Redmi", "Xiaomi Redmi смартфоны", ["smartphone", "android"], 89900, 72000),
-        ("prod-003", "electronics", "Ноутбук ASUS", "ASUS ноутбугі", ["laptop", "work"], 285000, 245000),
-        ("prod-004", "home", "Набор посуды", "Ыдыс жиынтығы", ["kitchen", "cook"], 18500, 12900),
-        ("prod-005", "home", "Увлажнитель воздуха", "Ауа ылғалдандырғышы", ["decor", "health"], 15600, 9900),
-        ("prod-006", "home", "Кофемашина", "Кофе машинасы", ["kitchen", "appliance"], 65000, 52000),
-        ("prod-007", "fashion", "Кроссовки Nike", "Nike кроссовкалары", ["shoes", "sport"], 45000, 35000),
-        ("prod-008", "fashion", "Куртка зимняя", "Қысқы куртка", ["clothing", "warm"], 28000, 19900),
-        ("prod-009", "fashion", "Джинсы Levi's", "Levi's джинсысы", ["clothing", "casual"], 32000, 24000),
-        ("prod-010", "sports", "Велосипед горный", "Тау велосипеді", ["fitness", "outdoor"], 85000, 68000),
-        ("prod-011", "sports", "Гантели набор", "Гантель жиынтығы", ["fitness", "home"], 12500, 8900),
-        ("prod-012", "sports", "Футбольный мяч", "Футбол добы", ["football", "outdoor"], 8500, 5900),
-        ("prod-013", "beauty", "Набор косметики", "Косметика жиынтығы", ["skincare", "gift"], 15800, 11200),
-        ("prod-014", "beauty", "Фен профессиональный", "Кәсіби фен", ["haircare", "appliance"], 22000, 16500),
-        ("prod-015", "books", "Книга 'Путь'", "'Жол' кітабы", ["novel", "bestseller"], 4500, 3200),
-        ("prod-016", "books", "Энциклопедия", "Энциклопедия", ["science", "education"], 8900, 6500),
-        ("prod-017", "toys", "Конструктор LEGO", "LEGO конструкторы", ["building", "kids"], 18900, 14500),
-        ("prod-018", "toys", "Настольная игра", "Үстел ойыны", ["family", "fun"], 12000, 8500),
-        ("prod-019", "food", "Набор специй", "Дәмдеуіштер жиынтығы", ["cook", "organic"], 3500, 2400),
-        ("prod-020", "food", "Чай премиум", "Премиум шай", ["drink", "gift"], 5600, 3900),
-        ("prod-021", "auto", "Автопылесос", "Автошаңсорғыш", ["car", "clean"], 12500, 8900),
-        ("prod-022", "auto", "Видеорегистратор", "Бейнетіркегіш", ["car", "safety"], 18500, 13900),
-        ("prod-023", "garden", "Садовый инструмент", "Бау құралы", ["outdoor", "tool"], 9500, 6800),
-        ("prod-024", "garden", "Семена овощей", "Көкөніс тұқымдары", ["garden", "organic"], 2500, 1800),
-        ("prod-025", "electronics", "Камера GoPro", "GoPro камерасы", ["camera", "action"], 145000, 125000),
+        ("10000000-0000-0000-0000-000000000001", "electronics", "Беспроводные наушники Sony", "Sony сымсыз құлаққаптары", ["smartphone", "audio"], 25200, 17900),
+        ("10000000-0000-0000-0000-000000000002", "electronics", "Смартфон Xiaomi Redmi", "Xiaomi Redmi смартфоны", ["smartphone", "android"], 89900, 72000),
+        ("10000000-0000-0000-0000-000000000003", "electronics", "Ноутбук ASUS", "ASUS ноутбугі", ["laptop", "work"], 285000, 245000),
+        ("10000000-0000-0000-0000-000000000004", "home", "Набор посуды", "Ыдыс жиынтығы", ["kitchen", "cook"], 18500, 12900),
+        ("10000000-0000-0000-0000-000000000005", "home", "Увлажнитель воздуха", "Ауа ылғалдандырғышы", ["decor", "health"], 15600, 9900),
+        ("10000000-0000-0000-0000-000000000006", "home", "Кофемашина", "Кофе машинасы", ["kitchen", "appliance"], 65000, 52000),
+        ("10000000-0000-0000-0000-000000000007", "fashion", "Кроссовки Nike", "Nike кроссовкалары", ["shoes", "sport"], 45000, 35000),
+        ("10000000-0000-0000-0000-000000000008", "fashion", "Куртка зимняя", "Қысқы куртка", ["clothing", "warm"], 28000, 19900),
+        ("10000000-0000-0000-0000-000000000009", "fashion", "Джинсы Levi's", "Levi's джинсысы", ["clothing", "casual"], 32000, 24000),
+        ("10000000-0000-0000-0000-000000000010", "sports", "Велосипед горный", "Тау велосипеді", ["fitness", "outdoor"], 85000, 68000),
+        ("10000000-0000-0000-0000-000000000011", "sports", "Гантели набор", "Гантель жиынтығы", ["fitness", "home"], 12500, 8900),
+        ("10000000-0000-0000-0000-000000000012", "sports", "Футбольный мяч", "Футбол добы", ["football", "outdoor"], 8500, 5900),
+        ("10000000-0000-0000-0000-000000000013", "beauty", "Набор косметики", "Косметика жиынтығы", ["skincare", "gift"], 15800, 11200),
+        ("10000000-0000-0000-0000-000000000014", "beauty", "Фен профессиональный", "Кәсіби фен", ["haircare", "appliance"], 22000, 16500),
+        ("10000000-0000-0000-0000-000000000015", "books", "Книга 'Путь'", "'Жол' кітабы", ["novel", "bestseller"], 4500, 3200),
+        ("10000000-0000-0000-0000-000000000016", "books", "Энциклопедия", "Энциклопедия", ["science", "education"], 8900, 6500),
+        ("10000000-0000-0000-0000-000000000017", "toys", "Конструктор LEGO", "LEGO конструкторы", ["building", "kids"], 18900, 14500),
+        ("10000000-0000-0000-0000-000000000018", "toys", "Настольная игра", "Үстел ойыны", ["family", "fun"], 12000, 8500),
+        ("10000000-0000-0000-0000-000000000019", "food", "Набор специй", "Дәмдеуіштер жиынтығы", ["cook", "organic"], 3500, 2400),
+        ("10000000-0000-0000-0000-000000000020", "food", "Чай премиум", "Премиум шай", ["drink", "gift"], 5600, 3900),
+        ("10000000-0000-0000-0000-000000000021", "auto", "Автопылесос", "Автошаңсорғыш", ["car", "clean"], 12500, 8900),
+        ("10000000-0000-0000-0000-000000000022", "auto", "Видеорегистратор", "Бейнетіркегіш", ["car", "safety"], 18500, 13900),
+        ("10000000-0000-0000-0000-000000000023", "garden", "Садовый инструмент", "Бау құралы", ["outdoor", "tool"], 9500, 6800),
+        ("10000000-0000-0000-0000-000000000024", "garden", "Семена овощей", "Көкөніс тұқымдары", ["garden", "organic"], 2500, 1800),
+        ("10000000-0000-0000-0000-000000000025", "electronics", "Камера GoPro", "GoPro камерасы", ["camera", "action"], 145000, 125000),
     ]
     
     for prod_id, category, name_ru, name_kk, tags, retail, group in product_data:
@@ -169,15 +170,15 @@ def get_demo_data() -> Dict[str, Any]:
             "embedding": embedding
         }
     
-    # Demo deals (8 active deals)
+    # Demo deals (8 active deals) with valid UUIDs
     # Main demo deal at 14/20 participants
     from datetime import datetime, timedelta
     now = datetime.now()
     
     deals = [
         {
-            "id": "deal-001",
-            "product_id": "prod-001",
+            "id": "20000000-0000-0000-0000-000000000001",
+            "product_id": "10000000-0000-0000-0000-000000000001",
             "city": "Алматы",
             "current_participants": 14,  # Main demo deal
             "target_participants": 20,
@@ -187,8 +188,8 @@ def get_demo_data() -> Dict[str, Any]:
             "created_at": (now - timedelta(days=5)).isoformat() + "Z"
         },
         {
-            "id": "deal-002",
-            "product_id": "prod-002",
+            "id": "20000000-0000-0000-0000-000000000002",
+            "product_id": "10000000-0000-0000-0000-000000000002",
             "city": "Алматы",
             "current_participants": 8,
             "target_participants": 15,
@@ -198,8 +199,8 @@ def get_demo_data() -> Dict[str, Any]:
             "created_at": (now - timedelta(days=2)).isoformat() + "Z"
         },
         {
-            "id": "deal-003",
-            "product_id": "prod-004",
+            "id": "20000000-0000-0000-0000-000000000003",
+            "product_id": "10000000-0000-0000-0000-000000000004",
             "city": "Астана",
             "current_participants": 18,
             "target_participants": 20,
@@ -209,8 +210,8 @@ def get_demo_data() -> Dict[str, Any]:
             "created_at": (now - timedelta(days=7)).isoformat() + "Z"
         },
         {
-            "id": "deal-004",
-            "product_id": "prod-007",
+            "id": "20000000-0000-0000-0000-000000000004",
+            "product_id": "10000000-0000-0000-0000-000000000007",
             "city": "Алматы",
             "current_participants": 5,
             "target_participants": 12,
@@ -220,8 +221,8 @@ def get_demo_data() -> Dict[str, Any]:
             "created_at": (now - timedelta(days=1)).isoformat() + "Z"
         },
         {
-            "id": "deal-005",
-            "product_id": "prod-010",
+            "id": "20000000-0000-0000-0000-000000000005",
+            "product_id": "10000000-0000-0000-0000-000000000010",
             "city": "Шымкент",
             "current_participants": 3,
             "target_participants": 10,
@@ -231,8 +232,8 @@ def get_demo_data() -> Dict[str, Any]:
             "created_at": (now - timedelta(days=3)).isoformat() + "Z"
         },
         {
-            "id": "deal-006",
-            "product_id": "prod-011",
+            "id": "20000000-0000-0000-0000-000000000006",
+            "product_id": "10000000-0000-0000-0000-000000000011",
             "city": "Алматы",
             "current_participants": 22,
             "target_participants": 25,
@@ -242,8 +243,8 @@ def get_demo_data() -> Dict[str, Any]:
             "created_at": (now - timedelta(days=10)).isoformat() + "Z"
         },
         {
-            "id": "deal-007",
-            "product_id": "prod-013",
+            "id": "20000000-0000-0000-0000-000000000007",
+            "product_id": "10000000-0000-0000-0000-000000000013",
             "city": "Астана",
             "current_participants": 6,
             "target_participants": 15,
@@ -253,8 +254,8 @@ def get_demo_data() -> Dict[str, Any]:
             "created_at": (now - timedelta(days=2)).isoformat() + "Z"
         },
         {
-            "id": "deal-008",
-            "product_id": "prod-025",
+            "id": "20000000-0000-0000-0000-000000000008",
+            "product_id": "10000000-0000-0000-0000-000000000025",
             "city": "Алматы",
             "current_participants": 2,
             "target_participants": 8,
@@ -265,17 +266,17 @@ def get_demo_data() -> Dict[str, Any]:
         }
     ]
     
-    # Demo events
+    # Demo events with valid UUIDs
     events = [
-        {"user_id": "user-001", "event_type": "view", "product_id": "prod-001", "category": "electronics", "created_at": (now - timedelta(days=2)).isoformat() + "Z"},
-        {"user_id": "user-001", "event_type": "click", "product_id": "prod-001", "category": "electronics", "created_at": (now - timedelta(days=2)).isoformat() + "Z"},
-        {"user_id": "user-001", "event_type": "click", "product_id": "prod-002", "category": "electronics", "created_at": (now - timedelta(days=1)).isoformat() + "Z"},
-        {"user_id": "user-001", "event_type": "view", "product_id": "prod-004", "category": "home", "created_at": (now - timedelta(days=1)).isoformat() + "Z"},
-        {"user_id": "user-002", "event_type": "view", "product_id": "prod-007", "category": "fashion", "created_at": (now - timedelta(days=3)).isoformat() + "Z"},
-        {"user_id": "user-002", "event_type": "click", "product_id": "prod-007", "category": "fashion", "created_at": (now - timedelta(days=3)).isoformat() + "Z"},
-        {"user_id": "user-002", "event_type": "join", "product_id": "prod-007", "deal_id": "deal-004", "category": "fashion", "created_at": (now - timedelta(days=2)).isoformat() + "Z"},
-        {"user_id": "user-003", "event_type": "view", "product_id": "prod-025", "category": "electronics", "created_at": (now - timedelta(days=1)).isoformat() + "Z"},
-        {"user_id": "user-003", "event_type": "share", "product_id": "prod-025", "category": "electronics", "created_at": (now - timedelta(hours=12)).isoformat() + "Z"},
+        {"user_id": "00000000-0000-0000-0000-000000000001", "event_type": "view", "product_id": "10000000-0000-0000-0000-000000000001", "category": "electronics", "created_at": (now - timedelta(days=2)).isoformat() + "Z"},
+        {"user_id": "00000000-0000-0000-0000-000000000001", "event_type": "click", "product_id": "10000000-0000-0000-0000-000000000001", "category": "electronics", "created_at": (now - timedelta(days=2)).isoformat() + "Z"},
+        {"user_id": "00000000-0000-0000-0000-000000000001", "event_type": "click", "product_id": "10000000-0000-0000-0000-000000000002", "category": "electronics", "created_at": (now - timedelta(days=1)).isoformat() + "Z"},
+        {"user_id": "00000000-0000-0000-0000-000000000001", "event_type": "view", "product_id": "10000000-0000-0000-0000-000000000004", "category": "home", "created_at": (now - timedelta(days=1)).isoformat() + "Z"},
+        {"user_id": "00000000-0000-0000-0000-000000000002", "event_type": "view", "product_id": "10000000-0000-0000-0000-000000000007", "category": "fashion", "created_at": (now - timedelta(days=3)).isoformat() + "Z"},
+        {"user_id": "00000000-0000-0000-0000-000000000002", "event_type": "click", "product_id": "10000000-0000-0000-0000-000000000007", "category": "fashion", "created_at": (now - timedelta(days=3)).isoformat() + "Z"},
+        {"user_id": "00000000-0000-0000-0000-000000000002", "event_type": "join", "product_id": "10000000-0000-0000-0000-000000000007", "deal_id": "20000000-0000-0000-0000-000000000004", "category": "fashion", "created_at": (now - timedelta(days=2)).isoformat() + "Z"},
+        {"user_id": "00000000-0000-0000-0000-000000000003", "event_type": "view", "product_id": "10000000-0000-0000-0000-000000000025", "category": "electronics", "created_at": (now - timedelta(days=1)).isoformat() + "Z"},
+        {"user_id": "00000000-0000-0000-0000-000000000003", "event_type": "share", "product_id": "10000000-0000-0000-0000-000000000025", "category": "electronics", "created_at": (now - timedelta(hours=12)).isoformat() + "Z"},
     ]
     
     return {
@@ -283,5 +284,5 @@ def get_demo_data() -> Dict[str, Any]:
         "products": products,
         "deals": deals,
         "events": events,
-        "_demo_note": "All data above is synthetic demo data for hackathon demonstration purposes."
+        "_demo_note": "All data above is synthetic demo data for hackathon demonstration purposes. All IDs are valid UUID strings."
     }
